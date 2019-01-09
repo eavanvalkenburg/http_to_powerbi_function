@@ -18,12 +18,15 @@
         "connString": {
             "type": "string",
             "metadata": {
-                "description": "Your connection string for Power BI Push dataset"
+                "description": "Your connection string to a PowerBI Push dataset"
             }
         }
     },
     "variables": {
-        "storageName": "[concat('function', uniqueString(parameters('siteName')))]"
+        "storageName": "[concat('function', uniqueString(parameters('siteName')))]",
+        "contentShareName": "[toLower(parameters('siteName'))]",
+        "repoUrl": "https://github.com/eavanvalkenburg/http_to_powerbi_function",
+        "branch": "master"
     },
     "resources": [
         {
@@ -61,6 +64,10 @@
                         {
                             "name": "connString",
                             "value": "[parameters('connString')]"
+                        },
+                        {
+                            "name": "Storage",
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageName')), '2015-05-01-preview').key1)]"
                         }
                     ]
                 },
