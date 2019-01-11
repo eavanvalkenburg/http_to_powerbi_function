@@ -7,7 +7,7 @@ If you want, you can now create some streaming data tiles on a dashboard but the
 
 ## Application settings
 
-- **connString** - Connection string for streaming dataset in Power BI, for more details see above or a full post [here](https://gist.github.com/eavanvalkenburg/9d2189fa5db171af4f78e768eb9466a7#power-bi-streaming-dataset).
+- **PowerBI Push Connection String** - Connection string for streaming dataset in Power BI, for more details see above or a full post [here](https://gist.github.com/eavanvalkenburg/9d2189fa5db171af4f78e768eb9466a7#power-bi-streaming-dataset).
 
 ## Quick Deploy to Azure
 
