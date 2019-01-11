@@ -2,7 +2,7 @@ using System.Net.Http;
 using System.Threading.Tasks; 
 using System.Configuration;
 
-private static readonly string connString = ConfigurationManager.ConnectionStrings["powerbi_push"].ConnectionString;
+private static readonly string connString = ConfigurationManager.ConnectionStrings["powerbiPush"].ConnectionString;
 
 public static async void Run(HttpRequestMessage req, TraceWriter log)
 {

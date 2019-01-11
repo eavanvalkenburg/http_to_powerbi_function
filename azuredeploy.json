@@ -15,7 +15,7 @@
                 "description": "The location to use for creating the function app and hosting plan. It must be one of the Azure locations that support function apps."
             }
         },
-        "powerbi_push_connection_string": {
+        "powerbiPushConnectionString": {
             "type": "string",
             "metadata": {
                 "description": "Your connection string to a PowerBI Push dataset"
@@ -68,8 +68,9 @@
                     ],
                     "connectionStrings":[
                         {
-                            "name": "powerbi_push",
-                            "value": "[parameters('powerbi_push_connection_string')]"
+                            "name": "powerbiPush",
+                            "type": "Custom",
+                            "connectionString": "[parameters('powerbiPushConnectionString')]"
                         }
                     ]
                 },
