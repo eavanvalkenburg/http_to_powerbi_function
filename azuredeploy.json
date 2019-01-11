@@ -15,7 +15,7 @@
                 "description": "The location to use for creating the function app and hosting plan. It must be one of the Azure locations that support function apps."
             }
         },
-        "connString": {
+        "powerbi_push_connection_string": {
             "type": "string",
             "metadata": {
                 "description": "Your connection string to a PowerBI Push dataset"
@@ -62,12 +62,14 @@
                             "value": "[variables('contentShareName')]"
                         },
                         {
-                            "name": "connString",
-                            "value": "[parameters('connString')]"
-                        },
-                        {
                             "name": "Storage",
                             "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageName')), '2015-05-01-preview').key1)]"
+                        }
+                    ],
+                    "connectionStrings":[
+                        {
+                            "name": "powerbi_push",
+                            "value": "[parameters('powerbi_push_connection_string')]"
                         }
                     ]
                 },
